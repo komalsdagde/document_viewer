@@ -17,7 +17,6 @@ dependencies:
   permission_handler: ^10.4.3
   docx_to_text: ^1.0.1
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
