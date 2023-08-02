@@ -13,11 +13,11 @@ This package is currently in development phase and should not be used for produc
 * Android `docx,doc,pdf,txt,jpg,jpeg,png`
 
 ## Features
-- To view pdf file
-- To view image (jpg,jpeg,png)
-- To view text file
-- To view docx file
-- To view doc file
+- View pdf file
+- View image (jpg,jpeg,png)
+- View text file
+- View docx file
+- View doc file
 
 ## Example
 Check out the [example](https://github.com/komalsdagde/document_viewer)
