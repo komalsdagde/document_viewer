@@ -1,39 +1,37 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+# Document_Viewer
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+# Introduction
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package which allows you to view any document format for Android.
+This package is currently in development phase and should not be used for production apps.
+
+## Supported platforms
+- Android
+
+## Support File Type
+* Android `docx,doc,pdf,txt,jpg,jpeg,png`
 
 ## Features
+- To view pdf file
+- To view image (jpg,jpeg,png)
+- To view text file
+- To view docx file
+- To view doc file
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Example
+Check out the [example](https://github.com/komalsdagde/document_viewer)
 
-## Getting started
+## License
+[MIT License](https://github.com/komalsdagde/document_viewer/blob/main/LICENSE)
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+# Future plans
 
-## Usage
+- To view Excel file.
+- To view PPT file.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Issues and feedback
+If you have any suggestions for including a feature or if something doesn't work, feel free to open a Github [issue](https://github.com/komalsdagde/document_viewer/issues) or to open a [pull request](https://github.com/komalsdagde/document_viewer/pulls), you are more than welcome to contribute!
 
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Contributor
+- Komal Dagade ([ZingWorks LLP](https://zingworks.in/))

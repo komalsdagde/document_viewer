@@ -1,7 +1,7 @@
 name: document_viewer
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/komalsdagde/document_viewer
 
 environment:
   sdk: '>=2.19.2 <4.0.0'
