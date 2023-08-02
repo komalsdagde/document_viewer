@@ -27,7 +27,7 @@ Check out the [example](https://github.com/komalsdagde/document_viewer)
 
 # Future plans
 
-- To view Excel file.
+- View Excel file.
 - To view PPT file.
 
 ## Issues and feedback
@@ -35,3 +35,4 @@ If you have any suggestions for including a feature or if something doesn't work
 
 ## Contributor
 - Komal Dagade ([ZingWorks LLP](https://zingworks.in/))
+    
