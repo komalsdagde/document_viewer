@@ -2,6 +2,6 @@
 
 Initial Android release
 
-## 1.0.0
+## 0.0.2
 
 1. To preview the PPT files

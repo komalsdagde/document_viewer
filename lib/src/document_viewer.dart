@@ -17,6 +17,7 @@ class DocumentViewer extends StatefulWidget {
 }
 
 class _DocumentViewerState extends State<DocumentViewer> {
+  // ignore: unused_field
   String _version = 'Unknown';
 
   getDocExtension() {
@@ -72,6 +73,7 @@ class _DocumentViewerState extends State<DocumentViewer> {
   // }
 
   Future<void> initPlatformState() async {
+    // ignore: unused_local_variable
     String version;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
