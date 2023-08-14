@@ -28,7 +28,6 @@ Check out the [example](https://github.com/komalsdagde/document_viewer)
 # Future plans
 
 - View Excel file.
-- View PPT file.
 
 ## Issues and feedback
 If you have any suggestions for including a feature or if something doesn't work, feel free to open a Github [issue](https://github.com/komalsdagde/document_viewer/issues) or to open a [pull request](https://github.com/komalsdagde/document_viewer/pulls), you are more than welcome to contribute!

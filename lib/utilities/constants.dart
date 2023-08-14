@@ -8,5 +8,7 @@ class Constants {
   static const String svg = ".svg";
   static const String docx = ".docx";
   static const String doc = ".doc";
+  static const String xlsx = ".xlsx";
+  static const String pptx = ".pptx";
   static const String enterFileText = "Please Provide a Valid file path";
 }

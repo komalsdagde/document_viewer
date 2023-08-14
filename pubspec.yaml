@@ -1,6 +1,6 @@
 name: document_viewer
 description: A Flutter package which allows you to view any document format for Android.
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/komalsdagde/document_viewer
 
 environment:
@@ -16,6 +16,7 @@ dependencies:
   external_path: ^1.0.3
   permission_handler: ^10.4.3
   docx_to_text: ^1.0.1
+  pdftron_flutter: ^1.0.1-13
 
 dev_dependencies:
   flutter_test:
