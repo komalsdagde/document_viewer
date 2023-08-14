@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     final directory = await getApplicationDocumentsDirectory();
     var path = await ExternalPath.getExternalStoragePublicDirectory(
         ExternalPath.DIRECTORY_DOWNLOADS);
-    final file = File('${directory.path}/On My iPhone');
+    final file = File('${directory.path}/sample.pdf');
     String localFilePath = '$path/sample.pdf';
     File localFile = File(localFilePath);
     Uint8List bytes = localFile.readAsBytesSync();
