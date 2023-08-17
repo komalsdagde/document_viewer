@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:pdf_viewer_plugin/pdf_viewer_plugin.dart';
 import 'package:pdftron_flutter/pdftron_flutter.dart';
 import 'package:photo_view/photo_view.dart';
+// import 'package:spreadsheet_decoder/spreadsheet_decoder.dart';
 
 class DocumentViewer extends StatefulWidget {
   final String filePath;
@@ -27,49 +28,53 @@ class _DocumentViewerState extends State<DocumentViewer> {
     }
   }
 
-  // List<Data?> rowdetail = [];
-
+  // List<Map> excelData = [];
+  // List<String> headingList = [];
   // _importFromExcel() async {
   //   var file = widget.filePath;
-  //   // var bytes = File(file).readAsBytesSync();
-  //   // var decoder = SpreadsheetDecoder.decodeBytes(bytes, update: true);
-  //   // for (var table in decoder.tables.keys) {
-  //   //   print(table);
-  //   //   print(decoder.tables[table]!.maxCols);
-  //   //   print(decoder.tables[table]!.maxRows);
-  //   //   for (var row in decoder.tables[table]!.rows) {
-  //   //     print("rows--->");
-  //   //     print('$row');
-  //   //   }
-  //   // }
-  //
   //   var bytes = File(file).readAsBytesSync();
-  //   var excel = Excel.decodeBytes(bytes);
+  //   var decoder = SpreadsheetDecoder.decodeBytes(bytes, update: true);
+  //   for (var table in decoder.tables.keys) {
+  //     print(table);
+  //     print(decoder.tables[table]!.maxCols);
+  //     print(decoder.tables[table]!.maxRows);
+  //     for (var row in decoder.tables[table]!.rows) {
+  //       Map cell = {};
+  //       cell = row.asMap();
+  //       excelData.add(cell);
   //
-  //   for (var table in excel.tables.keys) {
-  //     for (var row in excel.tables[table]!.rows) {
-  //       rowdetail = row;
+  //       print('$row');
   //     }
+  //     print("EXCELDATA FIRST: ${excelData.first.values.toList()}");
   //   }
   //
-  //   var excel1 = Excel.createExcel();
-  //
-  //   Sheet sheetObject = excel1['Sheet1'];
-  //
-  //   CellStyle cellStyle = CellStyle(
-  //       backgroundColorHex: '#1AFF1A',
-  //       fontFamily: getFontFamily(FontFamily.Calibri));
-  //
-  //   cellStyle.underline = Underline.Single; // or Underline.Double
-  //
-  //   var cell = sheetObject.cell(CellIndex.indexByString('A1'));
-  //   cell.value = 8; // dynamic values support provided;
-  //
-  //   List<String> data = ["Mr", "Joseph", "Isiyemi"];
-  //   sheetObject.appendRow(data);
-  //   // cell.cellStyle = cellStyle;
-  //
-  //   print("sheetObject : ${sheetObject.rows}");
+  //   // var bytes = File(file).readAsBytesSync();
+  //   // var excel = Excel.decodeBytes(bytes);
+  //   //
+  //   // for (var table in excel.tables.keys) {
+  //   //   for (var row in excel.tables[table]!.rows) {
+  //   //     rowdetail = row;
+  //   //   }
+  //   // }
+  //   //
+  //   // var excel1 = Excel.createExcel();
+  //   //
+  //   // Sheet sheetObject = excel1['Sheet1'];
+  //   //
+  //   // CellStyle cellStyle = CellStyle(
+  //   //     backgroundColorHex: '#1AFF1A',
+  //   //     fontFamily: getFontFamily(FontFamily.Calibri));
+  //   //
+  //   // cellStyle.underline = Underline.Single; // or Underline.Double
+  //   //
+  //   // var cell = sheetObject.cell(CellIndex.indexByString('A1'));
+  //   // cell.value = 8; // dynamic values support provided;
+  //   //
+  //   // List<String> data = ["Mr", "Joseph", "Isiyemi"];
+  //   // sheetObject.appendRow(data);
+  //   // // cell.cellStyle = cellStyle;
+  //   //
+  //   // print("sheetObject : ${sheetObject.rows}");
   // }
 
   Future<void> initPlatformState() async {
@@ -126,9 +131,11 @@ class _DocumentViewerState extends State<DocumentViewer> {
   }
 
   Future<String> readFromDocxFile() async {
-    final file = File(widget.filePath); // To convert docx
+    final file = File(widget.filePath);
     final bytes = await file.readAsBytes(); // Convert file into bytes
-    content = docxToText(bytes); // docx to text
+    content = docxToText(bytes);
+    setState(() {}); // docx to text
+
     return content;
   }
 
@@ -138,6 +145,7 @@ class _DocumentViewerState extends State<DocumentViewer> {
       color: Colors.white,
       width: MediaQuery.sizeOf(context).width,
       child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (getDocExtension() == Constants.pdf) ...[
@@ -164,19 +172,44 @@ class _DocumentViewerState extends State<DocumentViewer> {
                 backgroundDecoration: const BoxDecoration(color: Colors.white),
               ),
             ),
-          ]
-          // else if (getDocExtension() == Constants.xlsx) ...[
-          //   SizedBox(
-          //     height: 700,
-          //     width: 500,
-          //     child: ListView.builder(
-          //         itemCount: rowdetail.length,
-          //         itemBuilder: (BuildContext context, int index) {
-          //           return Text(rowdetail[index].toString());
-          //         }),
-          //   )
-          // ]
-          else if (getDocExtension() == Constants.pptx) ...[
+          ] else if (getDocExtension() == Constants.xlsx) ...[
+            // SizedBox(
+            //   height: 900,
+            //   width: 900,
+            //   child: DataTable(
+            //     columns: excelData.first.values
+            //         .toList()
+            //         .map((e) => DataColumn(label: Text(e.toString())))
+            //         .toList(),
+            //     // DataColumn(
+            //     //   label: Text('ID'),
+            //     // ),
+            //
+            //     rows: excelData
+            //         . // Loops through dataColumnText, each iteration assigning the value to element
+            //         first
+            //         .values
+            //         .map(
+            //           ((element) => const DataRow(
+            //                 cells: <DataCell>[
+            //                   DataCell(Text("1")),
+            //                   DataCell(Text("1")),
+            //                   DataCell(Text("1")),
+            //                   DataCell(Text("1")),
+            //                   DataCell(Text("1")),
+            //                   DataCell(Text("1")),
+            //                   DataCell(Text("1")),
+            //                   DataCell(Text(
+            //                       "1")) //Extracting from Map element the value
+            //                   // DataCell(Text(element["Number"])),
+            //                   // DataCell(Text(element["State"])),
+            //                 ],
+            //               )),
+            //         )
+            //         .toList(),
+            //   ),
+            // )
+          ] else if (getDocExtension() == Constants.pptx) ...[
             const Center(child: Text("Waiting..."))
           ]
         ],
