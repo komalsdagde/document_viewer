@@ -1,5 +1,5 @@
 ## 0.0.2-3
-1. Removed pdftron package
+1. Refactored ppt code
 
 ## 0.0.2-2
 1. Minor Bug fixes
