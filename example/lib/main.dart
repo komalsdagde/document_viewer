@@ -9,11 +9,14 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
 }
 
@@ -32,11 +35,11 @@ class _MyAppState extends State<MyApp> {
     final directory = await getApplicationDocumentsDirectory();
     var path = await ExternalPath.getExternalStoragePublicDirectory(
         ExternalPath.DIRECTORY_DOWNLOADS);
-    final file = File('${directory.path}/sample.pdf');
-    String localFilePath = '$path/sample.pdf';
+    final file = File('${directory.path}/sample12.doc');
+    String localFilePath = '$path/sample12.doc';
     File localFile = File(localFilePath);
     Uint8List bytes = localFile.readAsBytesSync();
-    file.writeAsBytesSync(bytes!);
+    file.writeAsBytesSync(bytes);
     return localFilePath;
   }
 
@@ -62,6 +65,7 @@ class _MyAppState extends State<MyApp> {
           ),
           body: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 if (pdfFlePath != null)
                   Expanded(
@@ -71,7 +75,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                   )
                 else
-                  const Center(child: Text("Pdf is not Loaded")),
+                  const Center(child: Text("Document is not Found")),
               ],
             ),
           ),
