@@ -1,3 +1,6 @@
+##0.0.2-4
+1. Updated README file.
+
 ## 0.0.2-3
 1. Refactored ppt code
 

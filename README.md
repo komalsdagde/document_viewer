@@ -4,7 +4,7 @@
 # Introduction
 
 A Flutter package which allows you to view any document format for Android.
-This package is currently in development phase and should not be used for production apps.
+
 
 ## Supported platforms
 - Android
